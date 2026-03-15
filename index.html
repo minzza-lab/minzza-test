@@ -9,16 +9,16 @@
     <style>
         body { font-family: 'Pretendard', sans-serif; }
         .rocket-gradient { background: linear-gradient(135deg, #0055ff 0%, #00aaff 100%); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased pb-20">
 
-    <!-- 상단 알림 바 -->
     <div class="bg-red-500 text-white text-[11px] font-bold py-2 text-center tracking-tight">
         🚀 원주 전지역 로켓배송 가능! 지금 주문 시 내일 아침 도착
     </div>
 
-    <!-- 네비게이션 -->
     <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div class="max-w-xl mx-auto px-4 h-14 flex items-center justify-between">
             <h1 class="text-xl font-extrabold text-blue-600 tracking-tighter italic">ROCKET HOTDEAL.</h1>
@@ -29,72 +29,51 @@
         </div>
     </header>
 
-    <!-- 히어로 섹션 (원주 타겟팅) -->
     <section class="bg-white pt-8 pb-6 px-4 border-b border-slate-100">
-        <div class="max-w-xl mx-auto">
+        <div class="max-w-xl mx-auto text-center">
             <h2 class="text-2xl font-extrabold leading-tight tracking-tight mb-2">
-                더 비싼 가격에 사지 마세요. <br>
-                <span class="text-blue-600">내일 아침 문 앞</span>에 도착합니다!
+                무거운 생수, <span class="text-blue-600">내일 아침 문 앞</span>에 <br>
+                무료로 배송받으세요!
             </h2>
-            <p class="text-slate-500 text-sm font-medium">원주 정류장에서 바로 확인하는 실시간 최저가 핫딜</p>
+            <p class="text-slate-500 text-sm font-medium">마트보다 싼 가격, 원주 정류장 특가</p>
         </div>
     </section>
 
-    <!-- 카테고리 탭 (쿠팡 품목 위주) -->
-    <div class="max-w-xl mx-auto px-4 mt-6">
-        <div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
-            <button class="tab-btn active shrink-0 px-4 py-2 bg-blue-600 text-white text-xs font-bold rounded-full shadow-md" data-target="all">전체</button>
-            <button class="tab-btn shrink-0 px-4 py-2 bg-white text-slate-500 text-xs font-bold rounded-full border border-slate-200" data-target="grocery">생필품/식품</button>
-            <button class="tab-btn shrink-0 px-4 py-2 bg-white text-slate-500 text-xs font-bold rounded-full border border-slate-200" data-target="digital">가전/디지털</button>
-            <button class="tab-btn shrink-0 px-4 py-2 bg-white text-slate-500 text-xs font-bold rounded-full border border-slate-200" data-target="beauty">생활/뷰티</button>
-        </div>
-    </div>
-
-    <!-- 상품 리스트 영역 -->
-    <main class="max-w-xl mx-auto px-4 mt-4 space-y-4" id="deal-container">
-        <!-- 상품 카드 예시 1 -->
-        <article class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex gap-4 transition-transform active:scale-[0.98]">
-            <div class="w-28 h-28 bg-slate-100 rounded-xl flex-shrink-0 bg-cover bg-center border border-slate-50" style="background-image: url('https://via.placeholder.com/200?text=Rocket+Item')"></div>
+    <main class="max-w-xl mx-auto px-4 mt-6 space-y-4" id="deal-container">
+        <!-- 등록하신 상품: 탐사수 2L 24개 -->
+        <article class="bg-white rounded-2xl p-4 shadow-sm border-2 border-blue-500 flex gap-4 transition-transform active:scale-[0.98]">
+            <div class="w-32 h-32 bg-slate-100 rounded-xl flex-shrink-0 bg-cover bg-center border border-slate-100" style="background-image: url('https://thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2290684784400524-814d24f0-4660-4927-a9a5-103300898539.jpg')"></div>
             <div class="flex flex-col justify-between py-0.5 flex-1">
                 <div>
                     <div class="flex items-center gap-1 mb-1">
-                        <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded border border-blue-100 italic">ROCKET</span>
-                        <span class="text-[9px] font-bold bg-red-50 text-red-600 px-1.5 py-0.5 rounded border border-red-100 uppercase">Best</span>
+                        <span class="text-[10px] font-bold bg-blue-600 text-white px-2 py-0.5 rounded italic shadow-sm">ROCKET DELIVERY</span>
                     </div>
-                    <h3 class="font-bold text-sm text-slate-800 line-clamp-2 leading-tight">로켓배송 추천 상품: 원주 지역 최저가 보장 아이템</h3>
+                    <h3 class="font-bold text-base text-slate-800 line-clamp-2 leading-snug">탐사수 무라벨 생수 2L, 24개입 - 가성비 끝판왕</h3>
+                    <p class="text-[11px] text-slate-400 mt-1 font-medium">원주 전지역 로켓배송 가능 품목</p>
                 </div>
                 <div>
                     <div class="flex items-baseline gap-1">
-                        <span class="text-red-500 font-black text-lg">42%</span>
-                        <span class="font-black text-lg text-slate-900 tracking-tighter">할인 중</span>
+                        <span class="text-red-500 font-black text-xl">특가</span>
+                        <span class="font-black text-xl text-slate-900 tracking-tighter italic">확인하기</span>
                     </div>
-                    <a href="#" class="btn-coupang mt-2 block w-full py-2.5 bg-yellow-400 text-black text-center font-bold text-xs rounded-lg shadow-sm">쿠팡 최저가 확인하기</a>
+                    <a href="https://www.coupang.com/vp/products/6830320694?itemId=15948648483&vendorItemId=83406358948" class="btn-coupang mt-2 block w-full py-3 bg-yellow-400 text-black text-center font-extrabold text-sm rounded-xl shadow-lg shadow-yellow-100">지금 바로 주문하기</a>
                 </div>
             </div>
         </article>
 
-        <!-- 상품 카드 예시 2 -->
-        <article class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex gap-4 transition-transform active:scale-[0.98]">
+        <!-- 다른 예시 상품 1 -->
+        <article class="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex gap-4 transition-transform active:scale-[0.98] opacity-80">
             <div class="w-28 h-28 bg-slate-100 rounded-xl flex-shrink-0 bg-cover bg-center border border-slate-50" style="background-image: url('https://via.placeholder.com/200?text=Digital+Deal')"></div>
             <div class="flex flex-col justify-between py-0.5 flex-1">
                 <div>
-                    <div class="flex items-center gap-1 mb-1">
-                        <span class="text-[9px] font-bold bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded border border-blue-100 italic">ROCKET</span>
-                    </div>
-                    <h3 class="font-bold text-sm text-slate-800 line-clamp-2 leading-tight">마트보다 저렴한 실시간 생활 가전 핫딜</h3>
+                    <span class="text-[9px] font-bold bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded border border-slate-200 italic">NEXT HOTDEAL</span>
+                    <h3 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1">실시간 원주 품절임박 가전 핫딜 정보</h3>
                 </div>
-                <div>
-                    <div class="flex items-baseline gap-1">
-                        <span class="text-red-500 font-black text-lg">15%</span>
-                        <span class="font-black text-lg text-slate-900 tracking-tighter">쿠팡 특가</span>
-                    </div>
-                    <a href="#" class="btn-coupang mt-2 block w-full py-2.5 bg-yellow-400 text-black text-center font-bold text-xs rounded-lg shadow-sm">최저가 확인하러 가기</a>
-                </div>
+                <a href="#" class="btn-coupang mt-2 block w-full py-2 bg-slate-100 text-slate-500 text-center font-bold text-[10px] rounded-lg">업데이트 대기 중</a>
             </div>
         </article>
     </main>
 
-    <!-- 푸터 (승인용 고지 필수) -->
     <footer class="max-w-xl mx-auto px-4 mt-12 pb-12 text-center pt-8 border-t border-slate-200">
         <p class="text-[10px] text-slate-400 font-medium leading-relaxed">
             원주 로켓핫딜은 실시간 쿠팡 베스트 상품을 큐레이션하여 제공합니다.<br>
@@ -103,7 +82,6 @@
         </p>
     </footer>
 
-    <!-- 안내 팝업 (모달) -->
     <div id="redirect-modal" class="fixed inset-0 z-[100] bg-black/60 items-center justify-center p-4 hidden">
         <div class="bg-white rounded-2xl p-6 w-full max-w-xs text-center shadow-2xl scale-90 transition-transform">
             <div class="w-14 h-14 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">🚛</div>
@@ -120,8 +98,6 @@
             0% { transform: translateX(-100%); }
             100% { transform: translateX(300%); }
         }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 
     <script src="script.js"></script>
