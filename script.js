@@ -1,17 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. 모바일 메뉴 토글
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            // 메뉴 열림/닫힘 시각화 (간단한 스타일 변경)
-            menuToggle.classList.toggle('open');
+    // 1. 추천인 코드 복사 기능
+    const copyButtons = document.querySelectorAll('.btn-copy');
+    
+    copyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const codeText = button.parentElement.querySelector('strong').innerText;
+            
+            navigator.clipboard.writeText(codeText).then(() => {
+                const originalText = button.innerText;
+                button.innerText = '복사됨!';
+                button.style.background = '#28a745';
+                
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.style.background = '#1a1c20';
+                }, 2000);
+            }).catch(err => {
+                console.error('복사 실패:', err);
+            });
         });
-    }
+    });
 
-    // 2. 스크롤 애니메이션 (Intersection Observer 활용)
+    // 2. 스크롤 시 카드 애니메이션
     const observerOptions = {
         threshold: 0.1
     };
@@ -25,23 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // 포스트 카드들에 초기 스타일 부여 및 관찰 시작
-    const postCards = document.querySelectorAll('.post-card');
-    postCards.forEach(card => {
+    const appCards = document.querySelectorAll('.app-card');
+    appCards.forEach(card => {
         card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease-out';
         observer.observe(card);
     });
-
-    // 3. 구독 폼 제출 핸들러 (실제 동작은 아니지만 피드백 제공)
-    const subscribeForm = document.querySelector('.subscribe-form');
-    if (subscribeForm) {
-        subscribeForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = subscribeForm.querySelector('input').value;
-            alert(`${email}님, 구독해주셔서 감사합니다! (데모 기능)`);
-            subscribeForm.reset();
-        });
-    }
 });
