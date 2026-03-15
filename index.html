@@ -3,138 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>예진이에게 보내는 편지</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
-
-        body {
-            font-family: 'Nanum Myeongjo', serif;
-            margin: 0;
-            background-color: #fff5f5;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            overflow-x: hidden; /* 가로 스크롤 방지 */
-        }
-
-        /* 💌 편지 봉투 스타일 */
-        .envelope {
-            background: white;
-            max-width: 600px;
-            width: 100%;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(214, 51, 132, 0.15);
-            position: relative;
-            z-index: 10;
-            border: 2px solid #ffe3e3;
-            text-align: center;
-        }
-
-        /* 📸 사진 스타일 */
-        .photo-frame {
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto 2rem;
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 5px solid #fff;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .photo-frame img {
-            width: 100%;
-            height: auto; /* 사진 비율 유지 */
-            display: block;
-        }
-
-        h1 {
-            color: #d63384;
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .letter-content {
-            color: #444;
-            line-height: 2;
-            font-size: 1.2rem;
-            white-space: pre-wrap;
-            margin-bottom: 2rem;
-        }
-
-        .signature {
-            text-align: right;
-            font-weight: bold;
-            color: #d63384;
-            font-size: 1.1rem;
-        }
-
-        /* ❤️ 퐁퐁 솟아오르는 하트 애니메이션 */
-        .heart {
-            position: fixed;
-            bottom: -50px;
-            color: #ff6b6b;
-            font-size: 20px;
-            user-select: none;
-            pointer-events: none;
-            z-index: 1;
-            animation: moveUp 4s linear infinite;
-        }
-
-        @keyframes moveUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(360deg);
-                opacity: 0;
-            }
-        }
-    </style>
+    <title>Minzza's Blog | 수익형 블로그의 시작</title>
+    <!-- Google Fonts: Pretendard 대체 (Inter 사용 가능) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
-            heart.style.opacity = Math.random();
-            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
-            document.body.appendChild(heart);
-            setTimeout(() => { heart.remove(); }, 5000);
-        }
-        setInterval(createHeart, 300);
-    </script>
+    <!-- 상단 네비게이션 -->
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">MINZZA.</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#posts">Posts</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#subscribe" class="btn-primary">Subscribe</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="메뉴 열기">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
-    <div class="envelope">
-        <div class="photo-frame">
-            <!-- 파일명을 대문자 photo.JPG로 수정했습니다! -->
-            <img src="photo.JPG" alt="우리 사진">
+    <!-- 히어로 섹션 -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">당신의 성장을 기록하고,<br>수익을 창출하는 블로그.</h2>
+                <p class="hero-desc">미니멀한 디자인과 압도적인 가독성으로 콘텐츠의 가치를 높입니다.</p>
+                <div class="hero-cta">
+                    <a href="#posts" class="btn-secondary">인기 글 보기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 메인 레이아웃 (본문 + 사이드바) -->
+    <main class="main-content container">
+        <!-- 포스트 리스트 -->
+        <div class="post-feed" id="posts">
+            <h3 class="section-title">최신 포스트</h3>
+            <div class="post-list">
+                <!-- 포스트 카드 1 -->
+                <article class="post-card">
+                    <div class="post-thumb" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="post-body">
+                        <span class="post-category">디지털 노마드</span>
+                        <h4 class="post-title"><a href="#">수익형 블로그로 월 100만원 버는 로드맵</a></h4>
+                        <p class="post-excerpt">블로그를 단순한 일기장이 아닌 비즈니스로 바라보는 관점이 필요합니다. 첫 단추를 끼우는 방법부터 수익화 전략까지...</p>
+                        <div class="post-meta">
+                            <span>2024.03.15</span>
+                            <span>읽기 시간 5분</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 포스트 카드 2 -->
+                <article class="post-card">
+                    <div class="post-thumb" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);"></div>
+                    <div class="post-body">
+                        <span class="post-category">웹 디자인</span>
+                        <h4 class="post-title"><a href="#">가독성을 높여주는 미니멀 디자인의 힘</a></h4>
+                        <p class="post-excerpt">방문자가 사이트에 머무는 시간을 늘리려면 디자인이 방해되지 않아야 합니다. 필수적인 요소만 남기는 미니멀리즘...</p>
+                        <div class="post-meta">
+                            <span>2024.03.14</span>
+                            <span>읽기 시간 3분</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 광고 슬롯 (본문 내 광고 예시) -->
+                <div class="ad-slot-inline">
+                    <p>ADVERTISEMENT</p>
+                    <div class="ad-placeholder">광고 배너 영역</div>
+                </div>
+
+                <!-- 포스트 카드 3 -->
+                <article class="post-card">
+                    <div class="post-thumb" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);"></div>
+                    <div class="post-body">
+                        <span class="post-category">경제적 자유</span>
+                        <h4 class="post-title"><a href="#">자동 수익 파이프라인 구축하기</a></h4>
+                        <p class="post-excerpt">내가 자는 동안에도 돈을 벌어다 주는 시스템. 블로그는 그 시스템의 훌륭한 기초가 될 수 있습니다...</p>
+                        <div class="post-meta">
+                            <span>2024.03.13</span>
+                            <span>읽기 시간 7분</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="load-more">
+                <button class="btn-outline">더 많은 글 보기</button>
+            </div>
         </div>
 
-        <h1>❤️ 사랑하는 예진이에게 ❤️</h1>
-        
-        <div class="letter-content">
-예진아 사랑해!
+        <!-- 사이드바 -->
+        <aside class="sidebar">
+            <!-- 프로필 카드 -->
+            <div class="sidebar-widget profile-widget">
+                <div class="profile-img"></div>
+                <h5 class="profile-name">Minzza</h5>
+                <p class="profile-bio">콘텐츠를 통한 가치 창출과 수익화를 연구합니다.</p>
+            </div>
 
-내가 열심히 공부해서 
-맛있는 거, 좋은 곳 많이 많이 데려가 줄게.
+            <!-- 사이드바 광고 -->
+            <div class="sidebar-widget ad-widget">
+                <p class="ad-label">AD</p>
+                <div class="ad-sidebar-placeholder">사이드바 광고 배너</div>
+            </div>
 
-항상 내 곁에 있어 줘서 고마워.
-우리 같이 힘내자! 
+            <!-- 뉴스레터 구독 -->
+            <div id="subscribe" class="sidebar-widget newsletter-widget">
+                <h5>Newsletter</h5>
+                <p>성장 노하우를 메일로 받아보세요.</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="이메일 주소" required>
+                    <button type="submit" class="btn-primary">구독하기</button>
+                </form>
+            </div>
 
-사랑해! ✨
+            <!-- 카테고리 -->
+            <div class="sidebar-widget category-widget">
+                <h5>Categories</h5>
+                <ul>
+                    <li><a href="#">디지털 노마드 (12)</a></li>
+                    <li><a href="#">수익화 전략 (8)</a></li>
+                    <li><a href="#">웹 개발 (5)</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 MINZZA Blog. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">X (Twitter)</a>
+                <a href="#">GitHub</a>
+            </div>
         </div>
+    </footer>
 
-        <div class="signature">
-            - 민혁이가-
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>

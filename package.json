@@ -1,0 +1,11 @@
+{
+  "name": "minzza-money-pjt",
+  "version": "1.0.0",
+  "description": "Real project: minzza money pjt",
+  "main": "script.js",
+  "scripts": {
+    "deploy": "wrangler pages deploy ."
+  },
+  "author": "minzza",
+  "license": "ISC"
+}
