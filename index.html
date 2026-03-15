@@ -3,73 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minzza Money | 틱톡 가입하고 혜택받기</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-    <link rel="stylesheet" href="style.css">
+    <title>Minzza Money | 대한민국 1등 앱테크 & 핫딜 정보</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700;800&display=swap">
+    <style>
+        body { font-family: 'Pretendard', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
 </head>
-<body>
-    <header class="navbar">
-        <div class="container">
-            <h1 class="logo">MINZZA MONEY.</h1>
-            <div id="welcome-msg" class="status-tag">오늘의 추천 앱테크 업데이트 완료 ⚡</div>
+<body class="bg-slate-50 text-slate-900 antialiased pb-24">
+
+    <!-- 상단 네비게이션 -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-xl mx-auto px-4 h-14 flex items-center justify-between">
+            <h1 class="text-xl font-extrabold text-blue-600 tracking-tighter">MINZZA MONEY.</h1>
+            <span class="text-[10px] font-bold bg-blue-50 text-blue-600 px-2 py-1 rounded-full border border-blue-100 uppercase tracking-wider">REALTIME UPDATED</span>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h2 class="hero-title">지금 바로 시작하는<br><span class="highlight">현금 지급</span> 앱테크 리스트</h2>
-            <p class="hero-desc">검증된 앱만 모았습니다. 아래 링크로 가입하고 즉시 혜택을 받으세요.</p>
+    <!-- 히어로 섹션 -->
+    <section class="bg-white pt-10 pb-8 px-4 border-b border-slate-100">
+        <div class="max-w-xl mx-auto">
+            <h2 class="text-3xl font-extrabold leading-tight tracking-tight mb-3">
+                당신의 일상에 <br>
+                <span class="text-blue-600">현금 파이프라인</span>을 더하세요.
+            </h2>
+            <p class="text-slate-500 text-base font-medium">검증된 앱테크 정보와 실시간 쿠팡 핫딜을 한곳에서 확인하세요.</p>
         </div>
     </section>
 
-    <main class="container">
-        <div class="app-grid">
-            <!-- 틱톡 카드: 주신 링크 반영 -->
-            <article class="app-card featured">
-                <div class="app-badge">오늘의 1위 🔥</div>
-                <div class="app-info">
-                    <div class="app-icon" style="background: #000;">🎵</div>
-                    <div class="app-details">
-                        <h3 class="app-name">틱톡 (TikTok)</h3>
-                        <p class="app-benefit">신규 가입 시 최대 혜택 즉시 지급</p>
+    <main class="max-w-xl mx-auto px-4 mt-6">
+        <!-- 탭 메뉴 -->
+        <div class="flex p-1 bg-slate-200/50 rounded-xl mb-6">
+            <button class="tab-btn active flex-1 py-2.5 text-sm font-bold rounded-lg transition-all bg-white text-blue-600 shadow-sm" data-target="app-tech">앱테크</button>
+            <button class="tab-btn flex-1 py-2.5 text-sm font-bold rounded-lg transition-all text-slate-500 hover:text-slate-700" data-target="coupang-deals">쿠팡 핫딜</button>
+            <button class="tab-btn flex-1 py-2.5 text-sm font-bold rounded-lg transition-all text-slate-500 hover:text-slate-700" data-target="news">머니 뉴스</button>
+        </div>
+
+        <!-- 1. 앱테크 섹션 -->
+        <div id="app-tech" class="tab-content active space-y-4">
+            <!-- 틱톡 카드 -->
+            <article class="relative bg-white border border-blue-100 rounded-2xl p-5 shadow-sm overflow-hidden">
+                <div class="absolute top-0 right-0 bg-blue-600 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl">HOT 추천</div>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-2xl shadow-inner">🎵</div>
+                    <div>
+                        <h3 class="font-bold text-lg">틱톡 (TikTok)</h3>
+                        <p class="text-blue-600 font-bold text-sm">신규 가입 시 최대 혜택 지급</p>
                     </div>
                 </div>
-                <div class="app-content">
-                    <div class="app-guide">
-                        <strong>💡 참여 방법:</strong><br>
-                        1. 아래 [혜택받고 가입하기] 버튼 클릭<br>
-                        2. 틱톡 앱 설치 및 회원가입<br>
-                        3. 가입 즉시 포인트 적립 확인!
-                    </div>
-                    
-                    <!-- 실제 틱톡 주소 연결 -->
-                    <a href="https://www.tiktok.com/ug/incentive/share/pro_scan_code?__status_bar=true&_d=el41519lib26ed&_pia_=1&_svg=1&aid=473824&enable_canvas=1&enable_canvas_optimize=1&et_campaign=coin&et_gameplay=scan_code_support&gd_label=click_wap_coin_scan_code_support_mentor&hide_nav_bar=1&inc_pid=coin_referral_onelink_scan_code_support_mentor&media_source=coin_referral_onelink_scan_code_support_mentor&og_image=https%3A%2F%2Fp16-ug-incentive-va.tiktokcdn.com%2Ftos-maliva-i-68e3t9dfc1-us%2F98885beeebc548498dcc4457a1119111.png~tplv-68e3t9dfc1-image.image&region=kr&share_app_id=473824&share_enter_from=bottom_tab&share_page_data=MIIBcQQMICLo3mrYxI07vp8VBIIBTdpFwg3gZUC6pwNLURIDny%2BXbsPndGO%2BwLcugZ2szRJeFOP4tIdA%2BCPQC5RQzutVpvlGt%2BbLhB79x1%2F%2B7cHd1O8xaXX4NJ%2FC%2FcFMpEh5htPqc%2FHQFGxg0lYTX5Uww9Jg5bFb3bfdFxR%2F9xv2dELDEAEKfmB%2B3GBZ05TfanFXJUGm4HlvndF%2BnVaAhe3yec2%2BfMQSlUnEfm1Z8z9RZ%2BPFUcGK4MvyycNnjOGPjOwgSqARUIM6jjAWD2lDJ3P5Lr0j2iAO5pXyvKafX1ZA1%2BUWPJBmSbO1a6ajxkXsrp%2Fjx1UROob%2B3%2Fyr2oPSNkEQJ79DkgY6orZi%2FYmMXy5HI9LKM%2B3mRJ%2B52xC2hccXyGTIrpvk5MXiMUg1%2F4TQy5AWZrmtt0xJS2C3aa820C6LQlkP%2Bwoot%2B%2F07gwoeVzGhQGttrJ28y4o9STmU8ettAJDPQQQGfxVEsLQaubN7QH6NTB%2F2g%3D%3D&share_position=card&share_region=KR&share_scene=0&share_time=1773586679559&share_type=qr_code&sharer_biz=ug_paid_acquisition&sharer_os=ios&should_full_screen=1&u_code=NjkxMjAzNTE1NDU4NDM1NTg0MQ%3D%3D&ug_launch_category=referral&use_new_link_policy=1" class="btn-action" target="_blank">지금 혜택받고 가입하기</a>
-                    
-                    <p style="text-align:center; font-size:0.8rem; color:var(--text-muted); margin-top:10px;">* 위 링크를 통해 가입 시에만 혜택이 적용됩니다.</p>
+                <div class="bg-slate-50 rounded-xl p-4 mb-4 text-xs text-slate-600 leading-relaxed">
+                    <p class="font-bold mb-1 text-slate-800">참여 방법:</p>
+                    1. 아래 버튼 클릭 후 앱 설치<br>
+                    2. 회원가입 및 추천인 등록<br>
+                    3. 즉시 현금 포인트 적립 완료!
                 </div>
+                <a href="https://www.tiktok.com/ug/incentive/share/pro_scan_code?__status_bar=true&_d=el41519lib26ed&_pia_=1&_svg=1&aid=473824&enable_canvas=1&enable_canvas_optimize=1&et_campaign=coin&et_gameplay=scan_code_support&gd_label=click_wap_coin_scan_code_support_mentor&hide_nav_bar=1&inc_pid=coin_referral_onelink_scan_code_support_mentor&media_source=coin_referral_onelink_scan_code_support_mentor&og_image=https%3A%2F%2Fp16-ug-incentive-va.tiktokcdn.com%2Ftos-maliva-i-68e3t9dfc1-us%2F98885beeebc548498dcc4457a1119111.png~tplv-68e3t9dfc1-image.image&region=kr&share_app_id=473824&share_enter_from=bottom_tab&share_page_data=MIIBcQQMICLo3mrYxI07vp8VBIIBTdpFwg3gZUC6pwNLURIDny%2BXbsPndGO%2BwLcugZ2szRJeFOP4tIdA%2BCPQC5RQzutVpvlGt%2BbLhB79x1%2F%2B7cHd1O8xaXX4NJ%2FC%2FcFMpEh5htPqc%2FHQFGxg0lYTX5Uww9Jg5bFb3bfdFxR%2F9xv2dELDEAEKfmB%2B3GBZ05TfanFXJUGm4HlvndF%2BnVaAhe3yec2%2BfMQSlUnEfm1Z8z9RZ%2BPFUcGK4MvyycNnjOGPjOwgSqARUIM6jjAWD2lDJ3P5Lr0j2iAO5pXyvKafX1ZA1%2BUWPJBmSbO1a6ajxkXsrp%2Fjx1UROob%2B3%2Fyr2oPSNkEQJ79DkgY6orZi%2FYmMXy5HI9LKM%2B3mRJ%2B52xC2hccXyGTIrpvk5MXiMUg1%2F4TQy5AWZrmtt0xJS2C3aa820C6LQlkP%2Bwoot%2B%2F07gwoeVzGhQGttrJ28y4o9STmU8ettAJDPQQQGfxVEsLQaubN7QH6NTB%2F2g%3D%3D&share_position=card&share_region=KR&share_scene=0&share_time=1773586679559&share_type=qr_code&sharer_biz=ug_paid_acquisition&sharer_os=ios&should_full_screen=1&u_code=NjkxMjAzNTE1NDU4NDM1NTg0MQ%3D%3D&ug_launch_category=referral&use_new_link_policy=1" target="_blank" class="block w-full py-3.5 bg-blue-600 text-white text-center font-bold rounded-xl shadow-lg shadow-blue-200 active:scale-[0.98] transition-all">혜택받고 가입하기</a>
+            </article>
+        </div>
+
+        <!-- 2. 쿠팡 핫딜 섹션 -->
+        <div id="coupang-deals" class="tab-content space-y-4">
+            <!-- 쿠팡 상품 카드 -->
+            <article class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+                <div class="flex gap-4">
+                    <div class="w-24 h-24 bg-slate-100 rounded-xl flex-shrink-0 bg-cover bg-center shadow-inner" style="background-image: url('https://via.placeholder.com/200?text=Coupang+Deal')"></div>
+                    <div class="flex flex-col justify-between py-1">
+                        <div>
+                            <span class="text-[10px] font-bold text-red-500 border border-red-100 bg-red-50 px-1.5 py-0.5 rounded uppercase">품절 임박</span>
+                            <h3 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1">실시간 쿠팡 베스트 인기 상품 모음</h3>
+                        </div>
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-red-500 font-extrabold text-lg">35%</span>
+                            <span class="font-extrabold text-lg">특가 확인</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn-coupang block w-full py-3 bg-yellow-400 text-black text-center font-bold rounded-xl mt-4 active:scale-[0.98] transition-all">최저가 확인하기</a>
             </article>
 
-            <!-- 케이뱅크 예시 (유지) -->
-            <article class="app-card">
-                <div class="app-info">
-                    <div class="app-icon" style="background: #ff5000;">💰</div>
-                    <div class="app-details">
-                        <h3 class="app-name">케이뱅크</h3>
-                        <p class="app-benefit">행운상자 받고 최대 1만원 당첨</p>
+            <article class="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm">
+                <div class="flex gap-4">
+                    <div class="w-24 h-24 bg-slate-100 rounded-xl flex-shrink-0 bg-cover bg-center shadow-inner" style="background-image: url('https://via.placeholder.com/200?text=Digital+Deal')"></div>
+                    <div class="flex flex-col justify-between py-1">
+                        <div>
+                            <span class="text-[10px] font-bold text-blue-500 border border-blue-100 bg-blue-50 px-1.5 py-0.5 rounded uppercase">디지털 가전</span>
+                            <h3 class="font-bold text-sm text-slate-800 line-clamp-2 mt-1">애플/삼성 최신 기기 카드 할인가</h3>
+                        </div>
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-red-500 font-extrabold text-lg">15%</span>
+                            <span class="font-extrabold text-lg">혜택 적용</span>
+                        </div>
                     </div>
                 </div>
-                <div class="app-content">
-                    <a href="#" class="btn-action">혜택 받으러 가기</a>
-                </div>
+                <a href="#" class="btn-coupang block w-full py-3 bg-yellow-400 text-black text-center font-bold rounded-xl mt-4 active:scale-[0.98] transition-all">최저가 확인하기</a>
             </article>
+        </div>
+
+        <!-- 3. 뉴스 섹션 -->
+        <div id="news" class="tab-content space-y-3">
+            <div class="bg-white p-4 rounded-xl border border-slate-100 flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-bold text-slate-400">경제</span>
+                    <h4 class="font-bold text-sm">2024년 놓치면 안 되는 정부 지원금 리스트</h4>
+                </div>
+                <span class="text-xs text-slate-400 italic">Today</span>
+            </div>
+            <div class="bg-white p-4 rounded-xl border border-slate-100 flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-bold text-slate-400">재테크</span>
+                    <h4 class="font-bold text-sm">파킹통장 금리 비교: 어디가 제일 높을까?</h4>
+                </div>
+                <span class="text-xs text-slate-400 italic">2h ago</span>
+            </div>
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 MINZZA MONEY PJT. 모든 혜택은 앱 사정에 따라 변경될 수 있습니다.</p>
+    <!-- 하단 고정 플로팅 -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-xl bg-slate-900 text-white rounded-2xl p-4 flex items-center justify-between shadow-2xl z-40">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-sm animate-pulse">💰</div>
+            <p class="text-sm font-bold">지금 시작하고 5,000원 받기</p>
         </div>
+        <a href="https://www.tiktok.com/..." target="_blank" class="bg-blue-600 px-4 py-2 rounded-lg font-bold text-xs">참여하기</a>
+    </div>
+
+    <!-- 푸터 -->
+    <footer class="max-w-xl mx-auto px-4 mt-12 pb-12 text-center border-t border-slate-200 pt-8">
+        <p class="text-[10px] text-slate-400 leading-relaxed">
+            이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.<br>
+            &copy; 2024 MINZZA MONEY PJT. All rights reserved.
+        </p>
     </footer>
+
+    <!-- 안내 팝업 (모달) -->
+    <div id="redirect-modal" class="fixed inset-0 z-[100] bg-black/60 items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl p-6 w-full max-w-xs text-center shadow-2xl">
+            <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">🚀</div>
+            <h4 class="text-lg font-bold mb-2 text-slate-900">쿠팡으로 이동합니다</h4>
+            <p class="text-xs text-slate-500 mb-6">쿠팡 앱 또는 웹사이트로 연결 중입니다.<br>잠시만 기다려 주세요.</p>
+            <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                <div class="bg-blue-600 h-full w-1/2 animate-[loading_1s_infinite]"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(200%); }
+        }
+    </style>
 
     <script src="script.js"></script>
 </body>

@@ -1,231 +1,74 @@
 :root {
     --primary: #0062ff;
     --primary-dark: #004ecc;
-    --accent: #ffd700;
-    --bg-light: #f4f7fa;
+    --accent: #ff385c;
+    --bg-light: #f8f9fa;
     --white: #ffffff;
     --text-main: #1a1c20;
     --text-muted: #5f6368;
-    --border: #e0e4e8;
-    --shadow: 0 10px 25px rgba(0,0,0,0.05);
+    --border: #edf0f3;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-main);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: var(--bg-light); color: var(--text-main); line-height: 1.6; padding-bottom: 70px; }
+.container { max-width: 600px; margin: 0 auto; padding: 0 1.25rem; }
 
 /* Navbar */
-.navbar {
-    background: var(--white);
-    padding: 1.25rem 0;
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+.navbar { background: var(--white); padding: 1rem 0; border-bottom: 1px solid var(--border); sticky; top: 0; z-index: 100; }
+.logo { font-size: 1.2rem; font-weight: 800; color: var(--primary); }
+.status-tag { font-size: 0.75rem; background: #e8f0fe; color: var(--primary); padding: 0.2rem 0.6rem; border-radius: 100px; font-weight: 700; }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--primary);
-}
-
-.status-tag {
-    font-size: 0.8rem;
-    background: #e8f0fe;
-    color: var(--primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 100px;
-    font-weight: 600;
-}
+/* Top Announcement */
+.top-announcement { background: #ff385c; color: white; padding: 0.6rem 0; text-align: center; font-size: 0.85rem; font-weight: 700; }
+.top-announcement a { color: white; text-decoration: none; }
 
 /* Hero */
-.hero {
-    padding: 4rem 0 3rem;
-    text-align: center;
-}
+.hero { padding: 3rem 0 2rem; text-align: center; }
+.hero-title { font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem; }
+.highlight { color: var(--primary); }
+.hero-desc { color: var(--text-muted); font-size: 1rem; }
 
-.hero-title {
-    font-size: 2.5rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-}
+/* Tab Menu */
+.tab-menu { display: flex; background: #eee; padding: 0.3rem; border-radius: 12px; margin-bottom: 2rem; }
+.tab-btn { flex: 1; border: none; padding: 0.7rem; border-radius: 10px; font-weight: 700; cursor: pointer; transition: 0.2s; color: var(--text-muted); }
+.tab-btn.active { background: var(--white); color: var(--primary); shadow: var(--shadow); }
 
-.highlight {
-    color: var(--primary);
-    background: linear-gradient(transparent 70%, #d2e3fc 70%);
-}
+/* Tab Content */
+.tab-content { display: none; }
+.tab-content.active { display: block; animation: fadeIn 0.3s ease; }
 
-.hero-desc {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-}
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* App Grid & Cards */
-.app-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 5rem;
-}
+/* App & Deal Cards */
+.app-card, .deal-card { background: var(--white); border-radius: 16px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: var(--shadow); position: relative; }
+.app-badge { position: absolute; top: 12px; right: 12px; background: #ff385c; color: white; padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.7rem; font-weight: 800; }
+.app-info { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+.app-icon { width: 48px; height: 48px; border-radius: 12px; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; }
+.app-name { font-size: 1.1rem; font-weight: 700; }
+.app-benefit { color: var(--primary); font-weight: 700; font-size: 0.9rem; }
 
-.app-card {
-    background: var(--white);
-    border-radius: 1.25rem;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--white);
-    transition: 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
+.btn-action, .btn-coupang { display: block; width: 100%; padding: 0.9rem; border-radius: 12px; text-align: center; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s; }
+.btn-action { background: var(--primary); color: white; }
+.btn-coupang { background: #ffdf00; color: #111; }
 
-.app-card.featured {
-    border: 2px solid var(--primary);
-}
+/* Deals Specific */
+.deal-card { display: flex; gap: 1rem; align-items: center; }
+.deal-img { width: 80px; height: 80px; background-size: cover; border-radius: 12px; flex-shrink: 0; }
+.deal-tag { font-size: 0.7rem; color: #ff385c; font-weight: 800; }
+.deal-title { font-size: 0.95rem; font-weight: 700; margin: 0.2rem 0; }
+.deal-price { font-size: 1rem; font-weight: 800; }
+.discount { color: #ff385c; margin-right: 4px; }
 
-.app-badge {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: var(--primary);
-    color: var(--white);
-    padding: 0.4rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    border-bottom-left-radius: 1rem;
-}
+/* News List */
+.news-item { background: var(--white); padding: 1.2rem; border-radius: 12px; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 1rem; }
+.news-label { background: #f0f2f5; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.7rem; font-weight: 700; color: var(--text-muted); }
+.news-title { flex: 1; font-size: 0.95rem; font-weight: 600; }
+.news-date { font-size: 0.75rem; color: var(--text-muted); }
 
-.app-info {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-bottom: 1.5rem;
-}
+/* Floating Banner */
+.floating-banner { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(26, 28, 32, 0.95); color: white; padding: 0.8rem 0; z-index: 1000; backdrop-filter: blur(10px); }
+.floating-banner .container { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; }
+.btn-small { background: var(--primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; text-decoration: none; font-weight: 700; }
 
-.app-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-}
-
-.app-name {
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-}
-
-.app-benefit {
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-.app-guide {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-}
-
-.qr-area {
-    margin: 1.5rem 0;
-    text-align: center;
-}
-
-.qr-placeholder {
-    width: 150px;
-    height: 150px;
-    background: #f1f3f4;
-    border: 2px dashed #dadce0;
-    border-radius: 1rem;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    color: #70757a;
-}
-
-.btn-action {
-    display: block;
-    background: var(--primary);
-    color: var(--white);
-    text-align: center;
-    padding: 1rem;
-    border-radius: 0.75rem;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: 0.2s;
-}
-
-.btn-action:hover {
-    background: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.referral-code {
-    margin-top: 1.25rem;
-    text-align: center;
-    font-size: 0.95rem;
-    background: #fff9c4;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-}
-
-.btn-copy {
-    background: var(--text-main);
-    color: var(--white);
-    border: none;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.75rem;
-    cursor: pointer;
-    margin-left: 0.5rem;
-}
-
-/* Footer */
-.footer {
-    padding: 3rem 0;
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.85rem;
-}
-
-@media (max-width: 600px) {
-    .hero-title {
-        font-size: 1.8rem;
-    }
-    .app-card {
-        padding: 1.5rem;
-    }
-}
+.footer { padding: 2rem 0; text-align: center; font-size: 0.75rem; color: var(--text-muted); }
