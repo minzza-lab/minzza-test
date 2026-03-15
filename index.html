@@ -40,21 +40,26 @@
     </section>
 
     <main class="max-w-xl mx-auto px-4 mt-6 space-y-4" id="deal-container">
-        <!-- 등록하신 상품: 탐사수 2L 24개 -->
         <article class="bg-white rounded-2xl p-4 shadow-sm border-2 border-blue-500 flex gap-4 transition-transform active:scale-[0.98]">
-            <div class="w-32 h-32 bg-slate-100 rounded-xl flex-shrink-0 bg-cover bg-center border border-slate-100" style="background-image: url('https://thumbnail10.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/2290684784400524-814d24f0-4660-4927-a9a5-103300898539.jpg')"></div>
+            <!-- 이미지를 img 태그로 변경하여 접근성 및 로딩 안정성 확보 -->
+            <div class="w-28 h-28 bg-slate-100 rounded-xl flex-shrink-0 overflow-hidden border border-slate-100 flex items-center justify-center">
+                <img src="https://thumbnail8.coupangcdn.com/thumbnails/remote/230x230ex/image/retail/images/1381223945415-46f34538-4f81-454d-82c5-76495147854d.jpg" 
+                     alt="탐사수 무라벨 생수" 
+                     class="w-full h-full object-cover"
+                     onerror="this.src='https://via.placeholder.com/200?text=Rocket+Deal'">
+            </div>
             <div class="flex flex-col justify-between py-0.5 flex-1">
                 <div>
                     <div class="flex items-center gap-1 mb-1">
-                        <span class="text-[10px] font-bold bg-blue-600 text-white px-2 py-0.5 rounded italic shadow-sm">ROCKET DELIVERY</span>
+                        <span class="text-[10px] font-bold bg-blue-600 text-white px-2 py-0.5 rounded italic shadow-sm">ROCKET</span>
+                        <span class="text-[10px] font-bold text-blue-600 ml-1">무료배송</span>
                     </div>
-                    <h3 class="font-bold text-base text-slate-800 line-clamp-2 leading-snug">탐사수 무라벨 생수 2L, 24개입 - 가성비 끝판왕</h3>
-                    <p class="text-[11px] text-slate-400 mt-1 font-medium">원주 전지역 로켓배송 가능 품목</p>
+                    <h3 class="font-bold text-base text-slate-800 line-clamp-2 leading-snug">탐사수 무라벨 생수 2L, 24개입 - 마트보다 저렴</h3>
+                    <p class="text-[11px] text-slate-400 mt-1 font-medium italic">원주 전지역 내일 아침 도착</p>
                 </div>
                 <div>
-                    <div class="flex items-baseline gap-1">
-                        <span class="text-red-500 font-black text-xl">특가</span>
-                        <span class="font-black text-xl text-slate-900 tracking-tighter italic">확인하기</span>
+                    <div class="flex items-baseline gap-1 text-red-600">
+                        <span class="font-black text-xl tracking-tighter">실시간 최저가 확인</span>
                     </div>
                     <a href="https://www.coupang.com/vp/products/6830320694?itemId=15948648483&vendorItemId=83406358948" class="btn-coupang mt-2 block w-full py-3 bg-yellow-400 text-black text-center font-extrabold text-sm rounded-xl shadow-lg shadow-yellow-100">지금 바로 주문하기</a>
                 </div>
